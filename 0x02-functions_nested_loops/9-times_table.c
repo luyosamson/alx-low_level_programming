@@ -1,51 +1,33 @@
 #include "main.h"
+
 /**
- * times_table - prints the by 9 table.
+ * times_table - Prints the 9 times table
  *
- * Description: prints all the nine table
- * Return: Always(0) Success
+ * Return: no return
  */
 void times_table(void)
 {
-int result;
-int step;
-int initial;
-int last_value;
-int k;
+	int a, b, op;
 
-k = 0;
-step = 0;
-last_value = 9;
-
-do {
-
-for (initial = 0; initial <= last_value; initial++)
-{
-result = initial * step;
-if (result <= 9)
-{
-_putchar(result + '0');
-}
-else
-{
-_putchar((result / 10) + '0');
-_putchar((result % 10) + '0');
-}
-if (initial == 9)
-{
-break;
-}
-else
-{
-_putchar(',');
-_putchar(' ');
-
-}
-
-}
-_putchar('\n');
-step += 1;
-k += 1;
-
-} while (k <= 9);
+	for (a = 0; a <= 9; a++)
+	{
+		_putchar(48);
+		for (b = 1; b <= 9; b++)
+		{
+			op = a * b;
+			_putchar(44);
+			_putchar(32);
+			if (op <= 9)
+			{
+				_putchar(32);
+				_putchar(op + 48);
+			}
+			else
+			{
+				_putchar((op / 10) + 48);
+				_putchar((op % 10) + 48);
+			}
+		}
+		_putchar('\n');
+	}
 }
